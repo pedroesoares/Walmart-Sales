@@ -1,6 +1,15 @@
-  Saber com exatidão a quantidade de vendas que uma loja, empresa ou companhia irá vender futuramente é um exercício que demanda muito conhecimento sobre os dados, o negócio bem como sobre o meio ao qual está inserido, contudo apesar desta dificuldade, esse exercício é de grande importância e valia para as empresas. Com uma predição de vendas bem definidas, companhias podem facilmente gerir gastos, adequar estoques, ajustar logística e estabelecer metas mais coerentes com o mercado, e estas são apenas algumas das grandes importâncias do exercício de predição de vendas.
-	Neste projeto têm-se a iniciativa de propor quais serão as vendas da companhia Walmart considerando alguns fatores importantes para cada uma das lojas, considerando fatores internos da companhia, tais como vendas, bem como fatores externos, como taxa de desemprego e Preço do combustível.
+## Project Overview
 
-  Para a resolução do problema, inicialmente foi realizado um reconhecimento geral na base de dados, descrição estatística dos dados, bem como a identificação de possíveis vazios ou valores com erros. Seguindo este step, foram criadas algumas hipóteses sobre a base de dados que foram respondidas utilizando métodos de análise de dados.
+Accurately forecasting weekly sales is critical for any company, with this we can optimize inventory, plan promotions, and avoid stockouts. In this project we developed a machine learning model to predict weekly sales at the store and department level using historical sales data, holiday information, and external economic indicators.
 
-  Para chegar ao objetivo final de predição de vendas foi necessário realizar uma etapa de pre processamento dos dados, utilizando o MinMax Scaler, com o intuito de deixar todas as variáveis em mesma escala, e utilizar o método do BorutaPy para a escolha das variáveis que entrarão no modelo, com as variáveis prontas, foram utilizados o Random Forest Regressor e o XGBoost Regressor para a aplicação do modelo de mchine leraning, onde como métodos de determinar qual modelo apresentava o melhor resultado, foram escolhidos os erros MAE(Mean Absolute Error), MAPE(Mean Absolute, Percentage Error) e o RMSE (Root Mean Square Error), onde o modelo de menor erro (XGBoost) passou pelo processo de Hyper Tuning dos parâmetros, utilizando o Randomized Search como método de tuning, chegando então para o modelo ideal de predição das vendas 
+Through exploratory data analysis (EDA) based on hypotheses, we formulated and validated assumptions about sales patterns, seasonality, and holiday effects. We applied preprocessing methods such as feature scaling and feature selection to enhance model performance. Models such as Random Forest and XGBoost were trained and evaluated using MAE, RMSE, and R² metrics.
+
+## Impact
+
+Our best model achieved a mean absolute percentage error (MAPE) of approximately 13.6% in forecasting weekly sales, indicating reasonably accurate sales projections, with that, we can consult and send this information for every store to plan for the week.
+
+| Model Name              | MAE        | MAPE   | RMSE       |
+| ----------------------- | ---------- | ------ | ---------- |
+| XGBRegressor            | 119,675.03 | 13.64% | 177,380.48 |
+| Random Forest Regressor | 127,777.60 | 14.01% | 234,441.24 |
+
